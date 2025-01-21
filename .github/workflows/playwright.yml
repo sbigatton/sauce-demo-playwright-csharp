@@ -20,4 +20,4 @@ jobs:
     - name: Build & Install
       run: dotnet build
     - name: Run your tests
-      run: dotnet test --settings .\SauceDemoPlaywrightCSharp\chromeSettings.runsettings 
+      run: dotnet test --settings chromeSettings.runsettings 
