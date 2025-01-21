@@ -22,4 +22,4 @@ jobs:
     - name: List File Structure
       run: ls -R
     - name: Run your tests
-      run: dotnet test --settings $GITHUB_WORKSPACE/chromeSettings.runsettings 
+      run: dotnet test --settings ./SauceDemoPlaywrightCSharp/bin/Debug/net8.0/chromeSettings.runsettings 
