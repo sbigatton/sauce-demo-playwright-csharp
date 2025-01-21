@@ -14,6 +14,8 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+    - name: List File Structure
+      run: ls -R
     - name: Build & Install
       run: dotnet build
     - name: Ensure browsers are installed
