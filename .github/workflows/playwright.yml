@@ -8,17 +8,16 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright/dotnet:v1.49.0-noble
+      options: --user 1001
     steps:
     - uses: actions/checkout@v4
     - name: Setup dotnet
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: List File Structure
-      run: ls -R
     - name: Build & Install
       run: dotnet build
-    - name: Ensure browsers are installed
-      run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
     - name: Run your tests
       run: dotnet test --settings .\SauceDemoPlaywrightCSharp\chromeSettings.runsettings 
