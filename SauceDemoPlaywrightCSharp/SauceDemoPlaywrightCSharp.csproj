@@ -27,13 +27,13 @@
   </ItemGroup>
 
   <ItemGroup>
-  <Content Include="Data\Account.json">
+  <Content Include="$(MSBuildProjectDirectory)/Data/Account.json">
     <CopyToOutputDirectory>Always</CopyToOutputDirectory>
   </Content>
-  <Content Include="Data\Products.json">
+  <Content Include="$(MSBuildProjectDirectory)/Data/Products.json">
     <CopyToOutputDirectory>Always</CopyToOutputDirectory>
   </Content>
-  <Content Include="settings.runsettings">
+  <Content Include="$(MSBuildProjectDirectory)/chromeSettings.runsettings">
     <CopyToOutputDirectory>Always</CopyToOutputDirectory>
   </Content>
 </ItemGroup>
