@@ -4,7 +4,7 @@ namespace SauceDemoPlaywrightCSharp.Pages;
 
 class CartPage(IPage page) : ProductListPage(page)
 {
-    string Title = "Your Cart";
+    public new string Title = "Your Cart";
     protected string QuantitySelector = "[data-test=\"item-quantity\"]";
 
     public ILocator GetProductQuantityByName(string name)

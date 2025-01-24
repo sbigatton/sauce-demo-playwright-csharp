@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 8.0.x
     - name: Build & Install
       run: dotnet build
-    - name: List File Structure
-      run: ls -R
+    - name: Ensure browsers are installed
+      run: pwsh ./SauceDemoPlaywrightCSharp/bin/Debug/net8.0/playwright.ps1 install --with-deps
     - name: Run your tests
       run: dotnet test --settings ./SauceDemoPlaywrightCSharp/bin/Debug/net8.0/chromeSettings.runsettings 

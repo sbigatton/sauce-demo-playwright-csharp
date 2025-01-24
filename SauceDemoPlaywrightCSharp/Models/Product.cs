@@ -4,12 +4,12 @@ namespace SauceDemoPlaywrightCSharp.Models;
 
 class Product
 {
-    string Name { get; set; }
-    string Description { get; set; }
-    string Image { get; set; }
-    double Price { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public string Image { get; set; }
+    public double Price { get; set; }
 
-    public IList<Product> FromJSON(string json)
+    public static List<Product> FromJSON(string json)
     {
         return JsonConvert.DeserializeObject<List<Product>>(json);
     }

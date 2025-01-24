@@ -4,7 +4,7 @@ namespace SauceDemoPlaywrightCSharp.Pages;
 
 class CheckoutStepTwoPage(IPage page) : CartPage(page)
 {
-    private string Title = "Checkout: Overview";
+    public new string Title = "Checkout: Overview";
 
     public async Task Cancel()
     {

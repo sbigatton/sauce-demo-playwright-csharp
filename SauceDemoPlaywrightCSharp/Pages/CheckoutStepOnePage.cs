@@ -4,7 +4,7 @@ namespace SauceDemoPlaywrightCSharp.Pages;
 
 class CheckoutStepOnePage(IPage page) : ProductDetailsPage(page)
 {
-    private string Title = "Checkout: Your Information";
+    public string Title = "Checkout: Your Information";
     private string FirstNameSelector = "[data-test=\"firstName\"]";
     private string LastNameSelector = "[data-test=\"lastName\"]";
     private string ZipCodeSelector = "[data-test=\"postalCode\"]";
@@ -28,6 +28,14 @@ class CheckoutStepOnePage(IPage page) : ProductDetailsPage(page)
     public async Task FillZipCode(string code) 
     {
         await page.FillAsync(ZipCodeSelector, code);
+    }
+
+    public async Task FillInformationAndContinue(string firstName, string lastName, string code)
+    {
+        await FillFirstName(firstName);
+        await FillLastName(lastName);
+        await FillZipCode(code);
+        await Continue();
     }
 
     public async Task Continue() 

@@ -4,21 +4,21 @@ namespace SauceDemoPlaywrightCSharp.Pages;
 
 class CheckoutCompletePage(IPage page) : BasePage(page)
 {
-    private string title = "Checkout: Complete!";
-    private string successImageSelector = ".pony_express";
-    private string thankYouMsgSelector = ".complete-header";
-    private string orderMsgSelector = ".complete-text";
+    public string Title = "Checkout: Complete!";
+    private string SuccessImageSelector = ".pony_express";
+    private string ThankYouMsgSelector = ".complete-header";
+    private string OrderMsgSelector = ".complete-text";
 
     public ILocator GetSuccessImage() {
-        return page.Locator(successImageSelector);
+        return page.Locator(SuccessImageSelector);
     }
 
     public ILocator GetThankYouMsg() {
-        return page.Locator(thankYouMsgSelector);
+        return page.Locator(ThankYouMsgSelector);
     }
 
     public ILocator GetOrderMsg() {
-        return page.Locator(orderMsgSelector);
+        return page.Locator(OrderMsgSelector);
     }
 
     public async Task BackHome() {
