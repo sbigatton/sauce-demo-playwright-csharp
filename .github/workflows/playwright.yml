@@ -21,5 +21,9 @@ jobs:
       run: dotnet build
     - name: Ensure browsers are installed
       run: pwsh ./SauceDemoPlaywrightCSharp/bin/Debug/net8.0/playwright.ps1 install --with-deps
-    - name: Run your tests
-      run: dotnet test --settings ./SauceDemoPlaywrightCSharp/bin/Debug/net8.0/chromeSettings.runsettings 
+    - name: Run tests in chromium
+      run: dotnet test --settings ./SauceDemoPlaywrightCSharp/bin/Debug/net8.0/chromium.runsettings 
+    - name: Run tests in firefox
+      run: dotnet test --settings ./SauceDemoPlaywrightCSharp/bin/Debug/net8.0/firefox.runsettings 
+    - name: Run tests in webkit
+      run: dotnet test --settings ./SauceDemoPlaywrightCSharp/bin/Debug/net8.0/webkit.runsettings 
