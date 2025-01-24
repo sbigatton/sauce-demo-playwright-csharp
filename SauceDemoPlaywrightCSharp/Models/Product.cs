@@ -9,8 +9,9 @@ class Product
     public string Image { get; set; }
     public double Price { get; set; }
 
-    public static List<Product> FromJSON(string json)
+    public static List<Product> GetData()
     {
-        return JsonConvert.DeserializeObject<List<Product>>(json);
+        var fileContent = File.ReadAllText("./Data/Products.json");
+        return JsonConvert.DeserializeObject<List<Product>>(fileContent);
     }
 }

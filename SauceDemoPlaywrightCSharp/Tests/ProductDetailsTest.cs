@@ -6,10 +6,8 @@ namespace SauceDemoPlaywrightCSharp.Tests;
 [TestClass]
 public class ProductDetailsTest : TestBase
 {
-    static string AccountData = File.ReadAllText(@$"{Directory.GetCurrentDirectory()}\Data\account.json");
-    static string ProductsData = File.ReadAllText(@$"{Directory.GetCurrentDirectory()}\Data\products.json");
-    static Account Account = Account.FromJSON(AccountData);
-    static List<Product> Products = Product.FromJSON(ProductsData);
+    static Account Account = Account.GetData();
+    static List<Product> Products = Product.GetData();
     static Product Product = Products.First(x => x.Name == "Sauce Labs Bike Light");
 
     [TestInitialize]

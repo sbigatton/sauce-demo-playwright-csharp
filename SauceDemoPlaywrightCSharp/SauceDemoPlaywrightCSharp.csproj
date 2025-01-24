@@ -27,10 +27,10 @@
   </ItemGroup>
 
   <ItemGroup>
-  <Content Include="Data/account.json">
+  <Content Include="Data/Account.json">
     <CopyToOutputDirectory>Always</CopyToOutputDirectory>
   </Content>
-  <Content Include="Data/products.json">
+  <Content Include="Data/Products.json">
     <CopyToOutputDirectory>Always</CopyToOutputDirectory>
   </Content>
   <Content Include="chromium.runsettings">

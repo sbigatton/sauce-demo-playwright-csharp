@@ -7,8 +7,7 @@ namespace SauceDemoPlaywrightCSharp.Tests;
 [TestClass]
 public class LoginTest : TestBase
 {
-    static string AccountData = File.ReadAllText(@$"{Directory.GetCurrentDirectory()}\Data\Account.json");
-    static Account Account = Account.FromJSON(AccountData);
+    static Account Account = Account.GetData();
 
     [TestInitialize]
     public async Task Setup()

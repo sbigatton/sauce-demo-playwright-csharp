@@ -4,11 +4,12 @@ namespace SauceDemoPlaywrightCSharp.Models;
 
 class Account
 {
-    public string Username { get; set; }
-    public string Password { get; set; }
+    public required string Username { get; set; }
+    public required string Password { get; set; }
 
-    public static Account FromJSON(string json)
+    public static Account GetData()
     {
-        return JsonConvert.DeserializeObject<Account>(json);
+        var fileContent = File.ReadAllText("./Data/Account.json");
+        return JsonConvert.DeserializeObject<Account>(fileContent);
     }
 }

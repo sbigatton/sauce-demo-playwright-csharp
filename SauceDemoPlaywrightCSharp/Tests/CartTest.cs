@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic;
 using SauceDemoPlaywrightCSharp.Models;
 using SauceDemoPlaywrightCSharp.Pages;
 
@@ -6,10 +7,8 @@ namespace SauceDemoPlaywrightCSharp.Tests;
 [TestClass]
 public class CartTest : TestBase
 {
-    static string AccountData = File.ReadAllText(@$"{Directory.GetCurrentDirectory()}\Data\account.json");
-    static string ProductsData = File.ReadAllText(@$"{Directory.GetCurrentDirectory()}\Data\products.json");
-    static Account Account = Account.FromJSON(AccountData);
-    static List<Product> Products = Product.FromJSON(ProductsData);
+    static Account Account = Account.GetData();
+    static List<Product> Products = Product.GetData();
     static Product ProductA = Products.First(x => x.Name == "Sauce Labs Bike Light");
     static Product ProductB = Products.First(x => x.Name == "Sauce Labs Bolt T-Shirt");
 
